@@ -1,5 +1,7 @@
 const express = require("express");
 const cors = require("cors");
+const helmet = require("helmet");
+const rateLimit = require("express-rate-limit");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
@@ -12,6 +14,7 @@ const allowedOrigins = process.env.CLIENT_URL
   ? process.env.CLIENT_URL.split(",").map((origin) => origin.trim())
   : ["http://localhost:5173", "http://127.0.0.1:5173"];
 
+app.use(helmet());
 app.use(
   cors({
     origin(origin, callback) {
@@ -25,6 +28,16 @@ app.use(
   })
 );
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: "Too many requests from this IP, please try again later."
+});
+app.use(apiLimiter);
 
 app.get("/", (req, res) => {
   res.json({ message: "Expense Tracker API is running" });
