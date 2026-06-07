@@ -4,6 +4,12 @@ A polished MERN expense tracker built for the Libra AI Fullstack Developer assig
 
 This application helps users securely manage daily spending through expense entry, search, filtering, analytics, and a clean responsive experience.
 
+## Live Deployment
+
+- Frontend: https://expense-tracker-theta-two-38.vercel.app/
+- Backend: https://expense-tracker-api-v0du.onrender.com
+- GitHub: https://github.com/jayeshphale/Expense-Tracker
+
 ## Table of Contents
 
 - [Project Overview](#project-overview)
@@ -61,32 +67,32 @@ Expense Tracker is a full-stack web app built with React on the frontend and Nod
 ```
 expense-tracker/
 +-- backend/
-¦   +-- controllers/
-¦   ¦   +-- authController.js
-¦   ¦   +-- expenseController.js
-¦   +-- middleware/
-¦   ¦   +-- authMiddleware.js
-¦   +-- models/
-¦   ¦   +-- Expense.js
-¦   ¦   +-- User.js
-¦   +-- routes/
-¦   ¦   +-- authRoutes.js
-¦   ¦   +-- expenseRoutes.js
-¦   +-- .env.example
-¦   +-- package.json
-¦   +-- package-lock.json
-¦   +-- server.js
+ï¿½   +-- controllers/
+ï¿½   ï¿½   +-- authController.js
+ï¿½   ï¿½   +-- expenseController.js
+ï¿½   +-- middleware/
+ï¿½   ï¿½   +-- authMiddleware.js
+ï¿½   +-- models/
+ï¿½   ï¿½   +-- Expense.js
+ï¿½   ï¿½   +-- User.js
+ï¿½   +-- routes/
+ï¿½   ï¿½   +-- authRoutes.js
+ï¿½   ï¿½   +-- expenseRoutes.js
+ï¿½   +-- .env.example
+ï¿½   +-- package.json
+ï¿½   +-- package-lock.json
+ï¿½   +-- server.js
 +-- frontend/
-¦   +-- public/
-¦   +-- src/
-¦   ¦   +-- assets/
-¦   ¦   +-- components/
-¦   ¦   +-- pages/
-¦   ¦   +-- services/
-¦   ¦   +-- utils/
-¦   +-- package.json
-¦   +-- package-lock.json
-¦   +-- vite.config.js
+ï¿½   +-- public/
+ï¿½   +-- src/
+ï¿½   ï¿½   +-- assets/
+ï¿½   ï¿½   +-- components/
+ï¿½   ï¿½   +-- pages/
+ï¿½   ï¿½   +-- services/
+ï¿½   ï¿½   +-- utils/
+ï¿½   +-- package.json
+ï¿½   +-- package-lock.json
+ï¿½   +-- vite.config.js
 +-- .gitignore
 +-- README.md
 ```
