@@ -630,58 +630,8 @@ th {
   padding: 12px;
 }
 
-@media (max-width: 1080px) {
-  .app-shell,
-  .dashboard-grid,
-  .expense-layout,
-  .auth-page {
-    grid-template-columns: 1fr;
-  }
-
-  .sidebar {
-    height: auto;
-    position: static;
-  }
-
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .auth-story {
-    min-height: auto;
-  }
-}
-
-@media (max-width: 700px) {
-  .content,
-  .sidebar,
-  .auth-page {
-    padding: 18px;
-  }
-
-  .page-header,
-  .filters-panel {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  h1,
-  .auth-story h1 {
-    font-size: 30px;
-  }
-
-  .form-grid,
-  .auth-proof {
-    grid-template-columns: 1fr;
-  }
-
-  .compact-field {
-    width: 100%;
-  }
-}
-
-/* Extra small screens adjustments */
-@media (max-width: 480px) {
+/* Tablet and medium screens - 1024px and below */
+@media (max-width: 1024px) {
   .app-shell {
     grid-template-columns: 1fr;
   }
@@ -689,34 +639,530 @@ th {
   .sidebar {
     height: auto;
     position: static;
-    padding: 12px;
+    padding: 16px;
+    gap: 20px;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .dashboard-grid,
+  .expense-layout,
+  .auth-page {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .auth-story {
+    min-height: auto;
+    display: none;
   }
 
   .content {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .main-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-brand {
+    width: 100%;
+  }
+
+  .navbar-links,
+  .navbar-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* Medium tablets - 768px and below */
+@media (max-width: 768px) {
+  .content {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .sidebar {
     padding: 12px;
     gap: 16px;
   }
 
+  .sidebar-footer {
+    gap: 10px;
+  }
+
+  .sidebar nav a {
+    min-height: 40px;
+    font-size: 14px;
+  }
+
+  .brand span,
+  .user-box span {
+    height: 40px;
+    width: 40px;
+    font-size: 14px;
+  }
+
+  .page-header,
+  .filters-panel,
+  .panel-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
   h1 {
-    font-size: 26px;
+    font-size: 32px;
   }
 
   h2 {
     font-size: 18px;
   }
 
-  .chart-wrap {
-    height: 260px;
+  .form-grid {
+    grid-template-columns: 1fr;
   }
 
-  .table-scroll {
-    overflow-x: auto;
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-proof {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .chart-wrap {
+    height: 280px;
+    max-height: 50vh;
+  }
+
+  .main-navbar {
+    padding: 14px 16px;
+  }
+
+  .navbar-links,
+  .navbar-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar-links a {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .icon-button {
+    min-width: 40px;
+    min-height: 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .primary-button,
+  .ghost-button {
+    padding: 10px 12px;
+    min-height: 40px;
+    font-size: 14px;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    min-height: 40px;
+    padding: 9px 11px;
+    font-size: 16px;
+  }
+
+  .compact-field {
+    width: 100%;
+  }
+
+  .search-field {
+    width: 100%;
+  }
+
+  .count-pill {
+    align-self: flex-start;
+  }
+}
+
+/* Small phones - 480px and below */
+@media (max-width: 480px) {
+  body {
+    min-width: 100%;
+  }
+
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    padding: 12px;
+    gap: 16px;
+    order: -1;
+  }
+
+  .content {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .sidebar nav {
+    flex-direction: column;
+  }
+
+  .sidebar nav a {
+    padding: 8px 10px;
+    min-height: 36px;
+    font-size: 13px;
+    gap: 8px;
+  }
+
+  .nav-icon {
+    height: 24px;
+    width: 24px;
+    font-size: 10px;
+  }
+
+  .brand,
+  .user-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .brand span,
+  .user-box span {
+    height: 36px;
+    width: 36px;
+    font-size: 12px;
+  }
+
+  .brand div h1,
+  .brand div strong {
+    font-size: 14px;
+  }
+
+  .brand small,
+  .user-box small {
+    font-size: 11px;
+  }
+
+  h1 {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+  .page-header {
+    gap: 8px;
+  }
+
+  .page-header div {
+    gap: 4px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+  }
+
+  .main-navbar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .navbar-brand {
+    gap: 8px;
+  }
+
+  .navbar-brand strong {
+    font-size: 14px;
+  }
+
+  .navbar-brand small {
+    font-size: 12px;
+  }
+
+  .navbar-user {
+    font-size: 12px;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .navbar-links a {
+    padding: 8px;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .navbar-actions {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .icon-button {
+    min-width: 36px;
+    min-height: 36px;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
   }
 
   .primary-button,
   .ghost-button,
   .danger-button {
+    padding: 8px 10px;
+    min-height: 36px;
+    font-size: 13px;
+    border-radius: 6px;
+  }
+
+  .panel {
+    padding: 14px;
+    border-radius: 6px;
+  }
+
+  .panel-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .stat-card {
+    padding: 14px;
+    gap: 10px;
+    min-height: auto;
+  }
+
+  .stat-card strong {
+    font-size: 24px;
+  }
+
+  .stat-meta {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .stat-meta b {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .field {
+    gap: 5px;
+  }
+
+  .field span {
+    font-size: 13px;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    min-height: 36px;
+    padding: 8px 10px;
+    font-size: 14px;
+    border-radius: 6px;
+  }
+
+  .form-grid {
+    gap: 12px;
+  }
+
+  .auth-panel {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .auth-tabs button {
+    min-height: 36px;
+    font-size: 13px;
+  }
+
+  .error-box {
     padding: 10px;
-    min-height: 40px;
+    font-size: 12px;
+  }
+
+  table {
+    margin-top: 10px;
+  }
+
+  th,
+  td {
+    padding: 10px 6px;
+    font-size: 12px;
+  }
+
+  th {
+    font-size: 10px;
+  }
+
+  .amount-cell {
+    text-align: right;
+  }
+
+  .category-chip,
+  .count-pill {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .action-row {
+    gap: 6px;
+  }
+
+  .action-row button {
+    padding: 6px 10px;
+    font-size: 12px;
+    min-height: 32px;
+  }
+
+  .empty-state {
+    padding: 24px 12px;
+  }
+
+  .chart-wrap {
+    height: 220px;
+    margin-top: 10px;
+  }
+
+  .recent-list {
+    gap: 2px;
+  }
+
+  .recent-item {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+
+  .auth-proof {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .auth-proof div {
+    padding: 12px;
+    gap: 4px;
+  }
+
+  .main-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-links a {
+    font-size: 12px;
+  }
+
+  .top-strip {
+    padding: 10px 12px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .top-strip div {
+    gap: 6px;
+    width: 100%;
+  }
+
+  .status-dot {
+    height: 6px;
+    width: 6px;
+  }
+
+  .sidebar-footer {
+    margin-top: auto;
+  }
+}
+
+/* Extra small phones - 320px and below */
+@media (max-width: 320px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .content,
+  .sidebar {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 14px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  .brand span,
+  .user-box span {
+    height: 32px;
+    width: 32px;
+    font-size: 10px;
+  }
+
+  .icon-button {
+    min-width: 32px;
+    min-height: 32px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .primary-button,
+  .ghost-button,
+  .danger-button {
+    min-height: 32px;
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    min-height: 32px;
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+
+  .panel {
+    padding: 10px;
+  }
+
+  th,
+  td {
+    padding: 8px 4px;
+    font-size: 11px;
   }
 }
