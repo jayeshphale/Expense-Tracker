@@ -270,6 +270,16 @@ Then open `http://localhost:5173` in your browser.
 - Backend security includes Helmet headers and rate limiting.
 - The repository is cleaned on the active `main` branch to remove tracked `node_modules` and `.env` files.
 
+## Assumptions
+
+- The backend is deployed at `https://expense-tracker-api-v0du.onrender.com` and is accessible from the internet.
+- The frontend is deployed at `https://expense-tracker-theta-two-38.vercel.app/` and uses the backend API URL in `VITE_API_URL`.
+- The backend environment includes valid `MONGO_URI`, `JWT_SECRET`, `JWT_EXPIRES_IN`, and `CLIENT_URL` variables.
+- `CLIENT_URL` is configured to allow the deployed frontend origin for CORS.
+- MongoDB Atlas accepts connections from the deployed backend environment.
+- Local development uses `http://localhost:5173` for frontend and `http://localhost:5000` for backend.
+- The application expects a modern browser with JavaScript enabled.
+
 ## Future Improvements
 
 - Add pagination for expense history
